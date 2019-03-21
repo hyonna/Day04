@@ -13,7 +13,6 @@ public class ArrayTest_6 {
 		// 학생 국어 점수 입력
 		// 학생 수학 점수 입력
 		// 학생 영어 점수 입력
-		//
 
 		// 2. 전체 정보 조회
 		// 학생 번호, 이름, 국어, 영어, 수학 점수 출력
@@ -39,7 +38,6 @@ public class ArrayTest_6 {
 			int select = sc.nextInt();
 
 			int num = 0;
-			
 
 			if (select == 1) {
 
@@ -47,7 +45,7 @@ public class ArrayTest_6 {
 				num = sc.nextInt();
 
 				System.out.println();
-				
+
 				int[] sNum = new int[num];
 				String[] name = new String[sNum.length];
 				int[] kor = new int[sNum.length];
@@ -68,11 +66,9 @@ public class ArrayTest_6 {
 
 					System.out.println(name[i] + "학생의 국어 점수를 입력하세요");
 					kor[i] = sc.nextInt();
-					
 
 					System.out.println(name[i] + "학생의 수학 점수를 입력하세요");
 					math[i] = sc.nextInt();
-					
 
 					System.out.println(name[i] + "학생의 영어 점수를 입력하세요");
 					eng[i] = sc.nextInt();
@@ -84,24 +80,23 @@ public class ArrayTest_6 {
 
 				for (int i = 0; i < sNum.length; i++) {
 
-					System.out.println(name[i] + "의 국어점수는  : " + kor[i] + "점, 수학점수는 : " + math[i] + "점, 영어 점수는 : " + eng[i] + "점");
+					System.out.println(
+							name[i] + "의 국어점수는  : " + kor[i] + "점, 수학점수는 : " + math[i] + "점, 영어 점수는 : " + eng[i] + "점");
 
 				}
 
 			} else {
-					
-					
-					break;
+				
+				
+				
 			}
 			
 			
 			
-			
-		} //while문 끝
-		
-		
-		
-		
+
+		} // while문 끝
+
+		System.out.println("프로그램 종료");
 
 	}
 
