@@ -1,5 +1,6 @@
 package com.hyun.array1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ArrayTest_6_1 {
@@ -30,6 +31,10 @@ public class ArrayTest_6_1 {
 		int[] eng = null;
 		int[] math = null;
 		String[] name = null;
+		int[] total = null;
+		int temp = 0;
+		String sTemp = "";
+		
 
 		boolean menu = true;
 
@@ -39,7 +44,8 @@ public class ArrayTest_6_1 {
 			System.out.println("1. 학 생 등 록 ");
 			System.out.println("2. 전 체 정 보 조 회");
 			System.out.println("3. 학 생 정 보 검 색");
-			System.out.println("4. 프로그램 종료");
+			System.out.println("4. 전 체 정 보 총 점 순"); // 최대값부터 정렬
+			System.out.println("5. 프로그램 종료");
 			System.out.println("************");
 
 			int select = sc.nextInt();
@@ -55,6 +61,8 @@ public class ArrayTest_6_1 {
 					kor = new int[sNum];
 					eng = new int[sNum];
 					math = new int[sNum];
+					total = new int[sNum];
+					
 
 				}
 
@@ -78,6 +86,10 @@ public class ArrayTest_6_1 {
 					eng[i] = sc.nextInt();
 					System.out.println((i + 1) + "번 학생의 수학 점수를 입력하세요");
 					math[i] = sc.nextInt();
+					
+					
+					total[i] += kor[i] + eng[i] + math[i];
+					System.out.println((i + 1) + "학생의 총 점수 : " + total[i] + "점");
 
 				}
 
@@ -141,6 +153,76 @@ public class ArrayTest_6_1 {
 
 				}
 
+			} else if(select == 4) {
+				
+				if (id != null) {
+
+					System.out.println("****총점 순 정렬****");
+					
+					for (int i = 0; i < total.length; i++) {
+
+						for(int j = i + 1; j < total.length; j++) {
+						
+							if(total[i] < total[j]) {
+						
+								temp = total[i];
+								total[i] = total[j];
+								total[j] = temp;
+						
+								temp = id[i];
+								id[i] = id[j];
+								id[j] = temp;
+								
+								temp = kor[i];
+								kor[i] = kor[j];
+								kor[j] = temp;
+								
+								temp = eng[i];
+								eng[i] = eng[j];
+								eng[j] = temp;
+								
+								temp = math[i];
+								math[i] = math[j];
+								math[j] = temp;
+								
+								sTemp = name[i];
+								name[i] = name[j];
+								name[j] = sTemp;
+										
+								
+							}
+						
+						}
+						
+						
+					}
+					
+					for (int i = 0; i < id.length; i++) {
+
+						System.out.println("****정보 조회****");
+						System.out.println((i + 1) + "위");
+						System.out.println("번호 : " + id[i]);
+						System.out.println("이름 : " + name[i]);
+						System.out.println("국어 : " + kor[i] + "점");
+						System.out.println("영어 : " + eng[i] + "점");
+						System.out.println("수학 : " + math[i] + "점");
+						System.out.println();
+						total[i] = kor[i] + eng[i] + math[i];
+						System.out.println(name[i] + "학생의 총 점수 : " + total[i] + "점");
+						System.out.println();
+
+					}
+
+				} else {
+
+					System.out.println("등록된 학생이 없습니다");
+
+				}
+					
+					
+
+				
+				
 			} else {
 
 				break;
