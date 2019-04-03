@@ -27,12 +27,6 @@ public class Array_2_test4 {
 			
 		}
 		
-		if(nums.length > 0) {
-			
-			System.out.println();
-			
-		}
-
 	
 	}
 	
