@@ -27,6 +27,11 @@ public class Array_2_test4 {
 			
 		}
 		
+		while(true) {
+			
+			
+		}
+		
 
 	
 	}
